@@ -1,5 +1,5 @@
 # arduino-robotbtcontrol
-Управление роботом на основе arduini-uno посредством bluetooth.
+Управление роботом на основе arduinino-uno посредством bluetooth.
 v 0.0001a
 4-х колесное шасси на основе Arduino-UNO с 4-мя редукторными двигателями управлямыми ШИМ.
 Система команд, передаваемых по bluetooth соответствует использумой в программе "Bluetooth RC Controller" под Android.
