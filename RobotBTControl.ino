@@ -18,6 +18,15 @@ const int LEFT_SPEED_DOWN = 11; //уменьшение скорости лево
 const int RIGHT_SPEED_UP = 12; //увеличение скорости правого борта
 const int RIGHT_SPEED_DOWN = 13; //уменьшение скорости правого борта
 const int SPEED_CONTROL = 14; //общее изменение скорости
+const int PARAM_0_ON  = 15;
+const int PARAM_0_OFF = 16;
+const int PARAM_1_ON  = 17;
+const int PARAM_1_OFF = 18;
+const int PARAM_2_ON  = 19;
+const int PARAM_2_OFF = 20;
+const int PARAM_3_ON  = 21;
+const int PARAM_3_OFF = 22;
+
 const int STOP = 100; //стоп
 const int CONTINUE = 101; //продолжать
 const int STOP_ALL = 102; //работа прекращена
@@ -71,31 +80,31 @@ int BTCheckMode(uint8_t key)
 {
   switch (key)
   {
-    case 'F': //стрелка вверх
+    case 'F': //стрелка вверх - движение вперед
       mode = FORWARD;
       break;
-    case 'L': //стрелка влево
+    case 'L': //стрелка влево - движение разворот влево
       mode = ROTATION_LEFT;
       break;
-    case 'R': //стрелка вправо
+    case 'R': //стрелка вправо - движение разворот вправо
       mode = ROTATION_RIGHT;
       break;
-    case 'S': //Отпускание клавишей управления
+    case 'S': //Отпускание клавишей управления - останов движения
       mode = STOP;
       break;
-    case 'B': //стрелка вниз
+    case 'B': //стрелка вниз - движение назад
       mode = BACKWARD;
       break;
-    case 'G'://стрелки вверх и влево
+    case 'G'://стрелки вверх и влево - движение вперед и влево
       mode = FORWARD_LEFT;
       break;
-    case 'I'://стрелки вверх и вправо
+    case 'I'://стрелки вверх и вправо - движение вперед и вправо
       mode = FORWARD_RIGHT;
       break;
-    case 'H'://стрелки вниз и влево
+    case 'H'://стрелки вниз и влево - движение назад и влево
       mode = BACKWARD_LEFT;
       break;
-    case 'J'://стрелки вниз и вправо
+    case 'J'://стрелки вниз и вправо - движение назад и вправо
       mode = BACKWARD_RIGHT;
       break;
     case 'D': //завершение работы управляющей программы на удаленном устройстве
@@ -146,28 +155,28 @@ int BTCheckMode(uint8_t key)
         speedK = 1;
         break;
       case 'V': //включить звук или что-то другое
-//        mode = PARAM_0_ON;
+        mode = PARAM_0_ON;
         break;
       case 'v': //выключить звук или что-то другое
-//        mode = PARAM_0_OFF;
+        mode = PARAM_0_OFF;
         break;
       case 'W': //включить фары или что-то другое
-//        mode = PARAM_1_ON;
+        mode = PARAM_1_ON;
         break;
       case 'w': //выключить фары или что-то другое
-//        mode = PARAM_1_OFF;
+        mode = PARAM_1_OFF;
         break;
       case 'U': //включить задний свет или что-то другое
-//        mode = PARAM_2_ON;
+        mode = PARAM_2_ON;
         break;
       case 'u': //выключить задний свет или что-то другое
-//        mode = PARAM_2_OFF;
+        mode = PARAM_2_OFF;
         break;
       case 'X': //включить дополнительную опцию или что-то другое
-//        mode = PARAM_3_ON;
+        mode = PARAM_3_ON;
         break;
       case 'x': //выключить дополнительную опцию или что-то другое
-//        mode = PARAM_3_OFF;
+        mode = PARAM_3_OFF;
         break;
   }
 }//BTCheckMode
